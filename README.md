@@ -12,6 +12,7 @@ you do want to clone and play with the repo, though, who am I to stop you?
 There are just a few things you should keep in mind.
 
 Start by cloning this repo the way you normally would:
+
     git clone git@github.com:h2g2guy/vim-files.git
 
 You'll notice that you pull in my .vimrc (renamed to vimrc) and pathogen by
@@ -24,12 +25,14 @@ repos in other repos.  But it takes a little extra work to clone.
 
 After cloning, step into the root directory of the files and initialize your 
 submodule file:
+
     cd vim-files
     git submodule init
 
 Finally, pull in the submodules.  This may result in an outdated vim plugin, 
 but since I am using exactly these files as they are in this repo, it's at 
 least guaranteed to work!
+
     git submodule update
 
 Under some strange circumstances that I don't fully understand at the moment,
