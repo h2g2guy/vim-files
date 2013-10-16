@@ -74,6 +74,9 @@ inoremap jj <ESC>
 inoremap jk <ESC>
 inoremap kj <ESC>
 
+" use patched font for windows (won't work if font isn't installed)
+set guifont=DejaVu_Sans_Mono_for_Powerline:h9:cANSI
+
 " ------------------- start plugin stuff
 
 " required for airline
