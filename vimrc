@@ -74,6 +74,8 @@ inoremap jj <ESC>
 inoremap jk <ESC>
 inoremap kj <ESC>
 
+set scrolloff=5
+
 " use patched font for windows (won't work if font isn't installed)
 set guifont=DejaVu_Sans_Mono_for_Powerline:h9:cANSI
 
@@ -95,3 +97,6 @@ let g:airline#extensions#tabline#enabled = 1
 
 " gundo mapping
 nnoremap <F5> :GundoToggle<CR>
+
+" nerdtree mapping
+nnoremap <F6> :NERDTreeToggle<CR>
