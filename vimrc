@@ -1,5 +1,11 @@
 execute pathogen#infect()
 
+" additional action needed:  install solarized into gnome-terminal
+" https://github.com/Anthony25/gnome-terminal-colors-solarized
+"
+" additionally, you'll need to install a patched font for airline
+" https://github.com/powerline/fonts
+
 " syntax settings
 syntax on
 filetype plugin indent on
@@ -79,15 +85,20 @@ set scrolloff=5
 " use patched font for windows (won't work if font isn't installed)
 set guifont=DejaVu_Sans_Mono_for_Powerline:h9:cANSI
 
+" use markdown highlighting for .md filetypes
+au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+
 " ------------------- start plugin stuff
 
 " required for airline
 set laststatus=2
 set ttimeoutlen=20
 
-" set colorscheme
+" set colorscheme to solarized, ensuring 256 colors
+set t_Co=256
 set background=dark
 colorscheme solarized
+let g:solarized_termcolors=256
 
 " airline font for fancy arrows
 let g:airline_powerline_fonts = 1
