@@ -16,7 +16,6 @@ filetype plugin indent on
 let mapleader=" "
 
 " leader commands
-nnoremap <Leader>e :Eval<CR>
 nnoremap <Leader>sv :source $MYVIMRC<CR>
 nnoremap <Leader>ev :e $MYVIMRC<CR>
 
@@ -126,6 +125,3 @@ let g:airline#extensions#tabline#enabled = 1
 
 " gundo mapping
 nnoremap <F5> :GundoToggle<CR>
-
-" nerdtree mapping
-nnoremap <F6> :NERDTreeToggle<CR>
