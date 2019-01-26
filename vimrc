@@ -2,6 +2,7 @@ call plug#begin("~/vimfiles/vim-plug")
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
+Plug 'AndrewRadev/yankwin.vim'
 call plug#end()
 
 " you'll need to install a patched font for airline
@@ -17,12 +18,17 @@ let mapleader=" "
 " leader commands
 nnoremap <Leader>e :Eval<CR>
 nnoremap <Leader>sv :source $MYVIMRC<CR>
+nnoremap <Leader>ev :e $MYVIMRC<CR>
 
 " easy window movement
 nnoremap <Leader>j <C-W>j
 nnoremap <Leader>k <C-W>k
 nnoremap <Leader>h <C-W>h
 nnoremap <Leader>l <C-W>l
+nnoremap <Leader>L gt
+nnoremap <Leader>H gT
+
+" fugitive stuff
 nnoremap <Leader>gs :Gstatus<CR>
 
 " search settings
@@ -65,10 +71,6 @@ autocmd GUIEnter * simalt ~x
 
 " show ruler in status bar
 set ruler
-
-" switch tabs with left and right arrow keys
-nnoremap <silent> <Right> gt
-nnoremap <silent> <Left> gT
 
 " a gentle reminder of a 120 column 'limit'
 set colorcolumn=120
