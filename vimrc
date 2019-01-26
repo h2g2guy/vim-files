@@ -124,3 +124,9 @@ let g:airline#extensions#tabline#enabled = 1
 if has("gui_running")
     let g:airline_powerline_fonts = 1
 endif
+
+" we don't need a mode displayed; we have powerline which does that for us
+set noshowmode
+
+" get rid of that ugly random separator at the end
+let g:airline_skip_empty_sections = 1
