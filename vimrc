@@ -18,6 +18,13 @@ let mapleader=" "
 nnoremap <Leader>e :Eval<CR>
 nnoremap <Leader>sv :source $MYVIMRC<CR>
 
+" easy window movement
+nnoremap <Leader>j <C-W>j
+nnoremap <Leader>k <C-W>k
+nnoremap <Leader>h <C-W>h
+nnoremap <Leader>l <C-W>l
+nnoremap <Leader>gs :Gstatus<CR>
+
 " search settings
 set smartcase
 set incsearch
