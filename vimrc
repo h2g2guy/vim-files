@@ -10,6 +10,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'AndrewRadev/yankwin.vim'
+Plug 'luochen1990/rainbow'
 call plug#end()
 
 " you'll need to install a patched font for airline to get fancy separators
@@ -130,3 +131,6 @@ set noshowmode
 
 " get rid of that ugly random separator at the end
 let g:airline_skip_empty_sections = 1
+
+" enable rainbow parens
+let g:rainbow_active = 1
