@@ -1,3 +1,10 @@
+" THE BASICS ----------------------------------------------------------------------------------------------------------
+
+syntax on
+filetype plugin indent on
+
+" PLUGIN SETUP --------------------------------------------------------------------------------------------------------
+
 call plug#begin("~/vimfiles/vim-plug")
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
@@ -5,19 +12,25 @@ Plug 'tpope/vim-fugitive'
 Plug 'AndrewRadev/yankwin.vim'
 call plug#end()
 
-" you'll need to install a patched font for airline
+" you'll need to install a patched font for airline to get fancy separators
 " https://github.com/powerline/fonts
 
-" syntax settings
-syntax on
-filetype plugin indent on
+" REMAPPINGS ----------------------------------------------------------------------------------------------------------
 
-" leader
+" doubletapping j, or chording j and k will escape insert mode
+inoremap jj <ESC>
+inoremap jk <ESC>
+inoremap kj <ESC>
+
+" set leader to space; why is this not default?
 let mapleader=" "
 
-" leader commands
-nnoremap <Leader>sv :source $MYVIMRC<CR>
-nnoremap <Leader>ev :e $MYVIMRC<CR>
+" commands
+nnoremap <silent> <Leader>sv :source $MYVIMRC<CR>
+nnoremap <silent> <Leader>ev :vsp $MYVIMRC<CR>
+nnoremap <silent> <Leader>sg :source $MYGVIMRC<CR>
+nnoremap <silent> <Leader>eg :vsp $MYGVIMRC<CR>
+nnoremap <silent> <Leader><Leader> :noh<CR>
 
 " easy window movement
 nnoremap <Leader>j <C-W>j
@@ -28,24 +41,49 @@ nnoremap <Leader>L gt
 nnoremap <Leader>H gT
 
 " fugitive stuff
-nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <silent> <Leader>gs :Gstatus<CR>
 
-" search settings
+" FORMATTING SETTINGS -------------------------------------------------------------------------------------------------
+
+" don't use tab characters, and use indent level of four spaces
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+"
+" set encoding (duh)
+set encoding=utf-8
+
+" SEARCH SETTINGS -----------------------------------------------------------------------------------------------------
+
 set smartcase
 set incsearch
 set hlsearch
-map <Space> :noh<CR>
 " turn off highlighting if we've reloaded this file
 noh
+
+" VISUAL SETTINGS -----------------------------------------------------------------------------------------------------
+
+" show ruler in status bar
+set ruler
+
+" a gentle reminder of a 120 column 'limit'
+set colorcolumn=120
+
+" context is important! ensure it's always on screen
+set scrolloff=5
+
+" who decided vsplits are on the left and top? default to right
+set splitright
+set splitbelow
+
+" RANDOM OTHER STUFF --------------------------------------------------------------------------------------------------
 
 " arbitrarily long history
 set history=10000
 
 " show current command in status line
 set showcmd
-
-" join ends of sentences with two spaces
-set joinspaces
 
 " line numbering
 set number
@@ -55,30 +93,8 @@ set number
 " with plugins.
 set autoindent
 
-" don't use tab characters, and use indent level of four spaces
-set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-
-" turn off error bells
-set noerrorbells visualbell t_vb=
-autocmd GUIEnter * set visualbell t_vb=
-
-" maximize on startup
-autocmd GUIEnter * simalt ~x
-
-" show ruler in status bar
-set ruler
-
-" a gentle reminder of a 120 column 'limit'
-set colorcolumn=120
-
 " allow easy hidden buffers
 set hidden
-
-" set encoding (duh)
-set encoding=utf-8
 
 " ensure we know we're running on a fast tty
 set ttyfast
@@ -86,42 +102,25 @@ set ttyfast
 " default to global subst's
 set gdefault
 
-" doubletapping j, or chording j and k will escape insert mode
-inoremap jj <ESC>
-inoremap jk <ESC>
-inoremap kj <ESC>
-
-set scrolloff=5
-
-" use patched font for windows (won't work if font isn't installed)
-set guifont=DejaVu_Sans_Mono_for_Powerline:h10:cANSI
-
-" who needs toolbars? turn off all the gui elements we don't need
-set guioptions-=m
-set guioptions-=T
-set guioptions-=r
-set guioptions-=L
-
 " use markdown highlighting for .md filetypes
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
-" ------------------- start plugin stuff
+" turn off error bells
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
+
+" PLUGIN-SPECIFIC CONFIGURATION ---------------------------------------------------------------------------------------
 
 " required for airline
 set laststatus=2
 set ttimeoutlen=20
 
-" set colorscheme to solarized, ensuring 256 colors
-let g:solarized_italic=0    "default value is 1
-let g:solarized_hitrail=1    "default value is 0
-set background=dark
-colorscheme solarized
-
-" airline font for fancy arrows
-let g:airline_powerline_fonts = 1
-
 " enable the top tabline for airline
 let g:airline#extensions#tabline#enabled = 1
 
-" gundo mapping
-nnoremap <F5> :GundoToggle<CR>
+" airline font for fancy arrows
+" for some reason, this won't work if it's in gvimrc, but will work here. gate
+" it with gui_running
+if has("gui_running")
+    let g:airline_powerline_fonts = 1
+endif
