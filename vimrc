@@ -1,4 +1,3 @@
-execute pathogen#infect()
 
 " additional action needed:  install solarized into gnome-terminal
 " https://github.com/Anthony25/gnome-terminal-colors-solarized
@@ -95,11 +94,11 @@ set laststatus=2
 set ttimeoutlen=20
 
 " set colorscheme to solarized, ensuring 256 colors
-set t_Co=256
-set background=dark
-colorscheme solarized
-let g:solarized_termcolors=256
-
+" set t_Co=256
+" set background=dark
+" colorscheme solarized
+" let g:solarized_termcolors=256
+" 
 " airline font for fancy arrows
 let g:airline_powerline_fonts = 1
 
