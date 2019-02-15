@@ -21,5 +21,6 @@ autocmd GUIEnter * simalt ~x
 " set colorscheme to solarized
 let g:solarized_italic=0    "default value is 1
 let g:solarized_hitrail=1    "default value is 0
+let g:solarized_contrast="high"
 set background=dark
 colorscheme solarized

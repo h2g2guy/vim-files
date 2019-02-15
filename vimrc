@@ -57,6 +57,7 @@ set encoding=utf-8
 
 " SEARCH SETTINGS -----------------------------------------------------------------------------------------------------
 
+set ignorecase
 set smartcase
 set incsearch
 set hlsearch
