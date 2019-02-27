@@ -111,6 +111,10 @@ au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
+" put swap files elsewhere
+" trailing // indicates that the file path should be built from the full file name
+set dir=$HOME\\vimfiles\\swap//
+
 " PLUGIN-SPECIFIC CONFIGURATION ---------------------------------------------------------------------------------------
 
 " required for airline

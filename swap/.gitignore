@@ -1,0 +1,4 @@
+# Ignore this directory, except this file.
+# This directory is for git to make swap files in; it must exist, but should be empty.
+*
+!.gitignore
