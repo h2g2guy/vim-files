@@ -1,4 +1,4 @@
 .netrwhist
 *.swp
 vim-plug
-
+*plug.vim.old*
