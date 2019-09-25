@@ -124,6 +124,9 @@ set ttimeoutlen=20
 " enable the top tabline for airline
 let g:airline#extensions#tabline#enabled = 1
 
+" number the tabline's buffers
+let g:airline#extensions#tabline#buffer_nr_show = 1
+
 " airline font for fancy arrows
 " for some reason, this won't work if it's in gvimrc, but will work here. gate
 " it with gui_running
