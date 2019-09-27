@@ -44,6 +44,16 @@ nnoremap <Leader>H gT
 " fugitive stuff
 nnoremap <silent> <Leader>gs :Gstatus<CR>
 
+" swap 0 and ^, because frankly 'beginning of line after whitespace' is way
+" more useful
+noremap 0 ^
+noremap ^ 0
+
+" easily comment and uncomment C-like code
+noremap <silent> <Leader>c :norm I// <Esc>
+noremap <silent> <Leader>u :norm f/dw<Return>
+" this could really be improved; it will break on blank lines, for example
+
 " FORMATTING SETTINGS -------------------------------------------------------------------------------------------------
 
 " don't use tab characters, and use indent level of four spaces
