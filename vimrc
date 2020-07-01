@@ -11,6 +11,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'AndrewRadev/yankwin.vim'
 Plug 'luochen1990/rainbow'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 " you'll need to install a patched font for airline to get fancy separators
