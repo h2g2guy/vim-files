@@ -76,9 +76,6 @@ noh
 
 " VISUAL SETTINGS -----------------------------------------------------------------------------------------------------
 
-" show ruler in status bar
-set ruler
-
 " a gentle reminder of a 120 column 'limit'
 set colorcolumn=120
 

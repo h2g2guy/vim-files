@@ -12,7 +12,7 @@ set guioptions-=L
 " use command line style dialogs
 set guioptions+=c
 
-" turn off error bells (again, apparently this is important to do again after gui initialization
+" turn off error bells (again, apparently this is important to do again after gui initialization)
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
