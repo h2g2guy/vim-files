@@ -56,6 +56,9 @@ noremap <silent> <Leader>c :norm I// <Esc>
 noremap <silent> <Leader>u :norm f/dw<Return>
 " this could really be improved; it will break on blank lines, for example
 
+" change visual mode put behavior to restore default register after paste
+xnoremap <silent> p p:let @"=@0<CR>
+
 " FORMATTING SETTINGS -------------------------------------------------------------------------------------------------
 
 " don't use tab characters, and use indent level of four spaces
