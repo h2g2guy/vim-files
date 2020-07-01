@@ -12,6 +12,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'AndrewRadev/yankwin.vim'
 Plug 'luochen1990/rainbow'
 Plug 'tpope/vim-surround'
+Plug 'svermeulen/vim-yoink'
 call plug#end()
 
 " you'll need to install a patched font for airline to get fancy separators
@@ -150,3 +151,14 @@ let g:airline_skip_empty_sections = 1
 
 " enable rainbow parens
 let g:rainbow_active = 1
+
+" yoink/put options
+nmap p <plug>(YoinkPaste_p)
+nmap P <plug>(YoinkPaste_P)
+nmap <C-n> <plug>(YoinkPostPasteSwapBack)
+nmap <C-p> <plug>(YoinkPostPasteSwapForward)
+" yoink defaults to 10 items; why not more?
+let g:yoinkMaxItems = 20
+" by default yoink doesn't include delete operations in the history; include
+" those
+let g:yoinkIncludeDeleteOperations = 1
