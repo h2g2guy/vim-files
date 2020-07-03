@@ -5,7 +5,13 @@ filetype plugin indent on
 
 " PLUGIN SETUP --------------------------------------------------------------------------------------------------------
 
-call plug#begin("~/vimfiles/vim-plug")
+" decide plugin location based on platform
+if has("win64") || has("win32")
+    call plug#begin("~/vimfiles/vim-plug")
+else
+    call plug#begin("~/.vim/vim-plug")
+endif
+
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
@@ -13,6 +19,7 @@ Plug 'AndrewRadev/yankwin.vim'
 Plug 'luochen1990/rainbow'
 Plug 'tpope/vim-surround'
 Plug 'svermeulen/vim-yoink'
+
 call plug#end()
 
 " you'll need to install a patched font for airline to get fancy separators
@@ -125,7 +132,16 @@ autocmd GUIEnter * set visualbell t_vb=
 
 " put swap files elsewhere
 " trailing // indicates that the file path should be built from the full file name
-set dir=$HOME\\vimfiles\\swap//
+if has("win64") || has("win32")
+    set dir=$HOME\\vimfiles\\swap//
+else
+    set dir=$HOME/.vim/swap//
+endif
+
+" background should be set as dark for terminal use
+if !has("gui_running")
+    set background=dark
+endif
 
 " PLUGIN-SPECIFIC CONFIGURATION ---------------------------------------------------------------------------------------
 
@@ -140,9 +156,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
 " airline font for fancy arrows
-" for some reason, this won't work if it's in gvimrc, but will work here. gate
-" it with gui_running
-if has("gui_running")
+" use this on unix, or anywhere if we're using gvim
+if has("gui_running") || has("unix")
     let g:airline_powerline_fonts = 1
 endif
 
