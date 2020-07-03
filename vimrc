@@ -35,11 +35,13 @@ inoremap kj <ESC>
 " set leader to space; why is this not default?
 let mapleader=" "
 
-" commands
+" easily edit vimrc files
 nnoremap <silent> <Leader>sv :source $MYVIMRC<CR>
 nnoremap <silent> <Leader>ev :vsp $MYVIMRC<CR>
 nnoremap <silent> <Leader>sg :source $MYGVIMRC<CR>
 nnoremap <silent> <Leader>eg :vsp $MYGVIMRC<CR>
+
+" doubletap leader to remove highlighting
 nnoremap <silent> <Leader><Leader> :noh<CR>
 
 " easy window movement
@@ -47,8 +49,24 @@ nnoremap <Leader>j <C-W>j
 nnoremap <Leader>k <C-W>k
 nnoremap <Leader>h <C-W>h
 nnoremap <Leader>l <C-W>l
-nnoremap <Leader>L gt
-nnoremap <Leader>H gT
+
+" I don't use tabs much anymore, but if I want them, I want an easy way to
+" switch between them
+nnoremap <Left> gt
+nnoremap <Right> gT
+" copy current buffer to a new tab
+nnoremap <silent> <Up> :tab split<CR>
+" close tab page; requires tapping twice to avoid hitting accidentally
+nnoremap <silent> <Down><Down> :tabclose<CR>
+
+" hmmm... gt and gT has been freed up. that sounds like a better name for 'goto tag',
+" right? lets also make 'go back' while we're here, since I don't use
+" bookmarks.
+nnoremap gt <C-]>
+nnoremap gT <C-W>]
+nnoremap gb <C-T>
+" while we're doing tag stuff, recompile ctags with F12
+nnoremap <silent> <F12> :!ctags -R .<CR><CR>
 
 " fugitive stuff
 nnoremap <silent> <Leader>gs :Gstatus<CR>
