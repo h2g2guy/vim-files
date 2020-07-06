@@ -12,6 +12,7 @@ else
     call plug#begin("~/.vim/vim-plug")
 endif
 
+Plug 'tpope/vim-repeat'
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
@@ -26,6 +27,9 @@ call plug#end()
 " https://github.com/powerline/fonts
 
 " REMAPPINGS ----------------------------------------------------------------------------------------------------------
+
+" sometimes I need a sec to finish a key combo...
+set timeoutlen=1750
 
 " doubletapping j, or chording j and k will escape insert mode
 inoremap jj <ESC>
@@ -83,6 +87,10 @@ noremap <silent> <Leader>u :norm f/dw<Return>
 
 " change visual mode put behavior to restore default register after paste
 xnoremap <silent> p p:let @"=@0<CR>
+
+" map =p and =P to realign columns after using put
+nnoremap =p ]p
+nnoremap =P [p
 
 " FORMATTING SETTINGS -------------------------------------------------------------------------------------------------
 
@@ -165,7 +173,7 @@ endif
 
 " required for airline
 set laststatus=2
-set ttimeoutlen=20
+set ttimeoutlen=10
 
 " enable the top tabline for airline
 let g:airline#extensions#tabline#enabled = 1
