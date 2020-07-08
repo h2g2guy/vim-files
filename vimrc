@@ -92,6 +92,10 @@ xnoremap <silent> p p:let @"=@0<CR>
 nnoremap =p ]p
 nnoremap =P [p
 
+if filereadable(expand('~/local.vimrc'))
+    source ~/local.vimrc
+endif
+
 " FORMATTING SETTINGS -------------------------------------------------------------------------------------------------
 
 " don't use tab characters, and use indent level of four spaces
