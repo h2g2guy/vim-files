@@ -161,6 +161,21 @@ if !has("gui_running")
     set background=dark
 endif
 
+" search in parent directory for tags
+set tags=./tags,tags,./../tags,../tags
+
+" open quickfix on :make
+augroup vimrc
+    autocmd QuickFixCmdPost [^l]* nested cwindow
+    autocmd QuickFixCmdPost l* nested lwindow
+augroup END
+
+" quickfix mappings
+nnoremap <silent> <Leader>qo :cwindow<CR>
+nnoremap <silent> <Leader>qn :cnext<CR>
+nnoremap <silent> <Leader>qN :cprev<CR>
+nnoremap <silent> <Leader>qq :cclose<CR>
+
 " PLUGIN-SPECIFIC CONFIGURATION ---------------------------------------------------------------------------------------
 
 " required for airline
