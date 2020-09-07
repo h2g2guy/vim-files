@@ -204,10 +204,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
 " airline font for fancy arrows
-" use this on unix, or anywhere if we're using gvim
-if has("gui_running") || has("unix")
-    let g:airline_powerline_fonts = 1
-endif
+let g:airline_powerline_fonts = 1
 
 " we don't need a mode displayed; we have powerline which does that for us
 set noshowmode
