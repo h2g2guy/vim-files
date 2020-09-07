@@ -58,8 +58,8 @@ nnoremap <Leader>l <C-W>l
 " switch between them
 nnoremap <Left> gt
 nnoremap <Right> gT
-" copy current buffer to a new tab
-nnoremap <silent> <Up> :tab split<CR>
+" copy current buffer to a new tab; requires tapping twice to avoid hitting accidentally
+nnoremap <silent> <Up> <Up> :tab split<CR>
 " close tab page; requires tapping twice to avoid hitting accidentally
 nnoremap <silent> <Down><Down> :tabclose<CR>
 
@@ -187,6 +187,9 @@ nnoremap <silent> <Leader>qo :cwindow<CR>
 nnoremap <silent> <Leader>qn :cnext<CR>
 nnoremap <silent> <Leader>qN :cprev<CR>
 nnoremap <silent> <Leader>qq :cclose<CR>
+
+" weird windows terminal fixes
+set t_u7=
 
 " PLUGIN-SPECIFIC CONFIGURATION ---------------------------------------------------------------------------------------
 
