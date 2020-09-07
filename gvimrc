@@ -1,7 +1,7 @@
 " only gvim specific stuff should go here
 
 " use patched font for windows (won't work if font isn't installed)
-set guifont=DejaVu_Sans_Mono_for_Powerline:h10:cANSI
+set guifont=Cascadia_Code_PL:h10:cANSI
 
 " who needs toolbars? turn off all the gui elements we don't need
 set guioptions-=m
