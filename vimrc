@@ -59,7 +59,7 @@ nnoremap <Leader>l <C-W>l
 nnoremap <Left> gt
 nnoremap <Right> gT
 " copy current buffer to a new tab; requires tapping twice to avoid hitting accidentally
-nnoremap <silent> <Up> <Up> :tab split<CR>
+nnoremap <silent> <Up><Up> :tab split<CR>
 " close tab page; requires tapping twice to avoid hitting accidentally
 nnoremap <silent> <Down><Down> :tabclose<CR>
 
