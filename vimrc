@@ -20,6 +20,7 @@ Plug 'AndrewRadev/yankwin.vim'
 Plug 'luochen1990/rainbow'
 Plug 'tpope/vim-surround'
 Plug 'svermeulen/vim-yoink'
+Plug 'justinmk/vim-sneak'
 
 call plug#end()
 
@@ -225,3 +226,6 @@ let g:yoinkMaxItems = 20
 " by default yoink doesn't include delete operations in the history; include
 " those
 let g:yoinkIncludeDeleteOperations = 1
+
+" let sneak repeat on s or S
+let g:sneak#s_next = 1
