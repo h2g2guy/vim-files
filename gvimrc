@@ -19,6 +19,11 @@ autocmd GUIEnter * set visualbell t_vb=
 " maximize on startup
 autocmd GUIEnter * simalt ~x
 
+" use local settings if present
+if filereadable(expand('~/local.vimrc'))
+    source ~/local.gvimrc
+endif
+
 " PLUGIN-SPECIFIC CONFIGURATION ---------------------------------------------------------------------------------------
 
 " set colorscheme to solarized

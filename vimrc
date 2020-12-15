@@ -93,6 +93,7 @@ xnoremap <silent> p p:let @"=@0<CR>
 nnoremap =p ]p
 nnoremap =P [p
 
+" use local settings if present
 if filereadable(expand('~/local.vimrc'))
     source ~/local.vimrc
 endif
