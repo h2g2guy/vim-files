@@ -20,7 +20,7 @@ autocmd GUIEnter * set visualbell t_vb=
 autocmd GUIEnter * simalt ~x
 
 " use local settings if present
-if filereadable(expand('~/local.vimrc'))
+if filereadable(expand('~/local.gvimrc'))
     source ~/local.gvimrc
 endif
 
