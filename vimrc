@@ -193,6 +193,11 @@ nnoremap <silent> <Leader>qq :cclose<CR>
 " weird windows terminal fixes
 set t_u7=
 
+" netrw preview window stuff
+let g:netrw_preview = 1
+" really hard to unpreview. make that easier
+nnoremap <silent> <Leader>p <C-W>z
+
 " PLUGIN-SPECIFIC CONFIGURATION ---------------------------------------------------------------------------------------
 
 " required for airline
