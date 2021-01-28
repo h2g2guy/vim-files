@@ -32,3 +32,10 @@ let g:solarized_hitrail=1    "default value is 0
 let g:solarized_contrast="high"
 set background=dark
 colorscheme solarized
+
+" CUSTOM COLORS -------------------------------------------------------------------------------------------------------
+
+" gently highlight the current line
+set cursorline
+set cursorlineopt=both
+hi CursorLineNr guifg=#93a1a1 guibg=#002b36
