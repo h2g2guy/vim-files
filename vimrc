@@ -21,6 +21,7 @@ Plug 'luochen1990/rainbow'
 Plug 'tpope/vim-surround'
 Plug 'svermeulen/vim-yoink'
 Plug 'justinmk/vim-sneak'
+Plug 'mbbill/undotree'
 
 call plug#end()
 
@@ -235,3 +236,5 @@ let g:yoinkIncludeDeleteOperations = 1
 
 " let sneak repeat on s or S
 let g:sneak#s_next = 1
+
+nmap <silent> <F9> :UndotreeToggle<CR>
